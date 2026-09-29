@@ -8,7 +8,7 @@ The goal is a professional, modern, accessible local-government website that hel
 
 The separate private `warren-township-zoning-portal` repository is reserved for future zoning, property, GIS, and QGIS work. Keep its implementation and data separate from this website.
 
-The main website still needs a public-facing Zoning & Property section with information, approved public documents and forms, contacts, and eventual links to an approved public portal experience. Portal development is not part of the current website scope or a prerequisite for launch. Do not confuse the private source repository with a public portal URL.
+The main website needs a public-facing Zoning & Property section with information, approved public documents and forms, and contacts. The Zoning & Property portal is part of the main Warren Township website experience, with the Zoning & Property landing page serving as its public entry point. The separate source/data boundary does not define a separate public experience. Portal implementation is not currently authorized or a prerequisite for launch. Do not confuse the private source repository with a public portal URL.
 
 Keep internal township systems, nonpublic records, resident submissions, and credentials out of public website content and the public repository. A future portal integration requires its own scope and approval.
 
@@ -29,11 +29,15 @@ Subpages and final URLs remain open for planning.
 
 ## Current phase and existing work
 
-We are in early planning and scaffolding. Preserve existing files, local changes, and useful research.
+We are in early planning and prototyping. The plain HTML/CSS prototype remains the design and information-architecture scaffold while navigation, page hierarchy, and visual structure are being settled. Preserve existing files, local changes, and useful research.
 
 Use [README.md](README.md) for the project overview and [docs/website-plan.md](docs/website-plan.md) when planning content, navigation, migration, or implementation. The top-level navigation above is approved; proposed subpages, page groupings, features, and URLs remain provisional. Keep these documents consistent when an approved decision changes.
 
-Keep framework, CMS, hosting, database, and form-service decisions open until editing responsibilities, maintenance needs, budget, and requirements are understood.
+The intended production architecture is Go for the application/server layer, server-rendered HTML templates, selective HTMX for progressive interactivity where it provides a clear user benefit, and Leaflet for interactive Zoning & Property portal mapping. Do not begin converting the prototype to Go or adding HTMX or Leaflet yet. Production migration and implementation will happen only after the prototype structure is approved; recording the architecture does not authorize implementation or dependency changes.
+
+The township intends to retain `warrentwptrumbull.gov` as its public-facing domain, with production hosting expected in Microsoft Azure. Final Azure service selection and deployment architecture must be decided separately before production migration; do not lock the plan to a specific Azure service now. DNS may point the retained domain to the new Azure-hosted site only when it is ready for production and cutover is authorized. Do not make DNS, hosting, or production cutover changes now. Current prototype work continues locally, unaffected by this decision.
+
+Keep any Go framework, CMS, database, and form-service decisions open until editing responsibilities, maintenance needs, budget, and requirements are understood.
 
 ## Content and design expectations
 
